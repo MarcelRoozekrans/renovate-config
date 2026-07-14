@@ -6,5 +6,13 @@
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
-  "commitMessageAction": "update"
+  "commitMessageAction": "update",
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "description": "Auto-merge non-major updates once required checks are green. Majors stay manual: they have repeatedly shipped breaking changes (Refit 12/13, Radzen 11, NSubstitute 6, Kotlin/AGP, astro).",
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin"],
+      "automerge": true
+    }
+  ]
 }
