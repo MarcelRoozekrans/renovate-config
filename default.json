@@ -11,8 +11,149 @@
   "packageRules": [
     {
       "description": "Auto-merge non-major updates once required checks are green. Majors stay manual: they have repeatedly shipped breaking changes (Refit 12/13, Radzen 11, NSubstitute 6, Kotlin/AGP, astro).",
-      "matchUpdateTypes": ["minor", "patch", "digest", "pin"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest",
+        "pin"
+      ],
       "automerge": true
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Authorization(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Authorization + generator",
+      "description": "Keep each ZeroAlloc source-generator package in the same PR as its runtime. The generator is version-locked to its runtime, so a generator-only bump fails to build (e.g. AI.Sentinel #111 and #87). Grouping forces both to the same version together. One rule per family because Renovate groupName cannot be templated per-package; add a line here when a new ZeroAlloc.*.Generator ships. Anchored regex so e.g. ZeroAlloc.Mediator does not swallow ZeroAlloc.Mediator.Authorization."
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Cache(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Cache + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Inject(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Inject + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Mediator(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Mediator + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Mediator\\.Authorization(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Mediator.Authorization + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Notify(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Notify + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.ORM(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.ORM + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Outbox(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Outbox + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Rest(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Rest + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Scheduling(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Scheduling + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Serialisation(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Serialisation + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Specification(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Specification + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Telemetry(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Telemetry + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.Validation(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.Validation + generator"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^ZeroAlloc\\.ValueObjects(\\.Generator)?$/"
+      ],
+      "groupName": "ZeroAlloc.ValueObjects + generator"
     }
   ]
 }
