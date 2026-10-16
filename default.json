@@ -7,7 +7,7 @@
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
   "commitMessageAction": "update",
-  "platformAutomerge": true,
+  "platformAutomerge": false,
   "packageRules": [
     {
       "description": "Auto-merge non-major updates once required checks are green. Majors stay manual: they have repeatedly shipped breaking changes (Refit 12/13, Radzen 11, NSubstitute 6, Kotlin/AGP, astro).",
@@ -155,5 +155,8 @@
       ],
       "groupName": "ZeroAlloc.ValueObjects + generator"
     }
+  ],
+  "description": [
+    "Renovate merges itself (platformAutomerge off): GitHub's native auto-merge waits for the required review even for an app with a ruleset bypass. The Renovate app (2740) is a bypass actor on each repo's Main ruleset since 2026-10-16; Renovate still waits for green checks."
   ]
 }
