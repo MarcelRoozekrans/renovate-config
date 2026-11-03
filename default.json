@@ -154,6 +154,17 @@
         "/^ZeroAlloc\\.ValueObjects(\\.Generator)?$/"
       ],
       "groupName": "ZeroAlloc.ValueObjects + generator"
+    },
+    {
+      "description": "Roll out MarcelRoozekrans/ci-baseline as one PR per repo: its reusable workflow and composite actions share one version. No digest pins, so v1.x releases reach callers through the moving v1 tag without PRs, and only a new major opens one. Majors stay manual through the automerge rule above.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "MarcelRoozekrans/ci-baseline"
+      ],
+      "groupName": "ci-baseline",
+      "pinDigests": false
     }
   ],
   "description": [
