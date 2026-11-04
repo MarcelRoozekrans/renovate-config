@@ -156,6 +156,26 @@
       "groupName": "ZeroAlloc.ValueObjects + generator"
     },
     {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^AI\\.Sentinel(\\..+)?$/"
+      ],
+      "groupName": "AI.Sentinel",
+      "description": "AI.Sentinel packages ship in lockstep and require each other at the same version: AI.Sentinel.Detectors.Sdk 4.2.0 needs AI.Sentinel 4.2.0 or later. Split PRs never restore on their own, so they sat open and left main broken. One PR per family keeps them together."
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "/^Minos\\.NET(\\..+)?$/"
+      ],
+      "groupName": "Minos.NET",
+      "description": "Same as AI.Sentinel: Minos.NET.Extensions.AI 1.9.0 needs Minos.NET 1.9.0 or later."
+    },
+    {
       "description": "Roll out MarcelRoozekrans/ci-baseline as one PR per repo: its reusable workflow and composite actions share one version. No digest pins, so v1.x releases reach callers through the moving v1 tag without PRs, and only a new major opens one. Majors stay manual through the automerge rule above.",
       "matchManagers": [
         "github-actions"
